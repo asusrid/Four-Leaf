@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;300;500&display=swap');
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 3rem;
+    background-color: #edf2f4;
+    background-image: url("../public/four-leaf_footer.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150vw 150vh;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.7rem;
+}
+
+.block_logo {
+    display: flex;
+    align-items: flex-end;
+    /* margin-bottom: 0.7rem; */
+}
+
+.icon {
+    display: inline;
+    vertical-align: sub;
+}
+
+.name {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 0.9rem;
+    color: #1E1E1E;
+    display: inline;
+    margin-left: 5%;
+    margin-bottom: 0rem;
+}
+
+.brand {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: bold;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1E1E1E;
+    /* display: inline; */
+    /* margin-left: 5%; */
+    /* margin-bottom: 0rem; */
+}

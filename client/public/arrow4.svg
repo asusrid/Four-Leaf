@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1920" viewBox="30 -255 1080 1920" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(0 0 0 0 0 0)" id="3b3a0fd7-6c77-4d6d-8212-3e116d6e2035"  >
+</g>
+<g transform="matrix(1 0 0 1 540 960)" id="c7ad04d0-e5db-46e6-b508-d1d743174c1e"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(182,18,18); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-960" rx="0" ry="0" width="1080" height="1920" />
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
+<g transform="matrix(3.93 -2.12 2.12 3.93 642.12 719.36)" id="e63ce795-63da-473e-ad1b-05797e631c85"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(128,237,153); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-37.5, -87.5)" d="M 20.1871 175 C 15.7485 172.891 13.0008 172.469 12.1553 170.992 C 8.98489 165.508 5.39173 160.024 3.70083 153.908 C -1.37187 137.666 -0.737781 121.214 2.64402 104.762 C 8.35081 76.7092 21.0325 51.8201 36.8847 28.1966 C 38.5756 25.6655 40.0552 23.1344 41.7461 20.3924 C 41.7461 20.1814 41.5347 19.7596 41.112 19.1268 C 36.462 20.3923 31.6007 21.6579 26.9507 22.7125 C 24.4144 23.1344 21.4552 23.1344 18.9189 22.2907 C 17.4394 21.8688 15.3258 19.5486 15.3258 18.0722 C 15.3258 16.1739 16.8053 13.8537 18.0735 12.1663 C 19.1303 11.1117 21.0326 10.9008 22.7235 10.4789 C 35.4052 7.31508 48.087 3.72935 60.9801 0.776411 C 71.9709 -1.75468 75.564 1.83105 74.9299 12.5882 C 74.2959 23.7672 74.0845 34.9462 73.6618 45.9142 C 73.4505 49.289 72.8164 52.8747 72.3936 56.6714 C 63.5164 52.6638 63.5164 52.6638 60.346 18.494 C 47.0301 33.2588 38.1529 49.289 29.9098 65.7411 C 21.6666 82.1932 16.1712 99.489 13.2121 117.839 C 10.2531 136.823 13.8462 154.751 20.1871 175 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
+</svg>

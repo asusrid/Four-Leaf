@@ -1,0 +1,42 @@
+.main {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-top: 5%; */
+  /* font-family: "Courier New", Courier, monospace; */
+}
+
+.flex {
+  flex: 1;
+  justify-content: space-between;
+}
+
+.wallet_message {
+  font-family: "Courier New", monospace;
+  font-weight: light;
+  font-size: 2rem;
+  margin-top: 40vh;
+  text-align: center;
+}
+
+.button {
+  margin: 1rem;
+}
+
+
+.inputNumber {
+  text-align: center;
+}
+
+
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin-top: 5%; */
+  }
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;300;500&display=swap');
+
+.questions {
+    width: 100%;
+    padding-top: 12.5vh;
+    padding-bottom: 8vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    text-align: left;
+}
+
+/* .questions_block_crown {
+    background-image: url("../public/crown_opacy.svg");
+    background-position: 100% 35%;
+    background-repeat: no-repeat;
+    background-size: 35vw 35vh;
+} */
+
+.questions_step {
+    display: inline;
+    margin-bottom: 2rem;
+}
+
+.question_image_position {
+    display: inline;
+    vertical-align: sub;
+}
+
+/* .questions_block_different {
+    background-image: url("../public/diff3_opacy.svg");
+    background-position: 100% 35%;
+    background-repeat: no-repeat;
+    background-size: 35vw 35vh;
+} */
+
+/* .questions_block_location {
+    background-image: url("../public/location_opacy.svg");
+    background-position: 100% 35%;
+    background-repeat: no-repeat;
+    background-size: 33vw 33vh;
+} */
+
+.questions_title {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3.2rem;
+    color: #1E1E1E;
+    display: inline;
+}
+
+.questions_text {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: #6C757D;
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 750px) {
+
+    /* .questions_block_crown {
+        background-image: url("../public/crown_opacy.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 130% 150%;
+    } */
+
+    .questions_text {
+        font-family: 'M PLUS 2', sans-serif;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 1.1rem;
+        color: #6C757D;
+    }
+
+    /* .questions_block_different {
+        background-image: url("../public/different_opacy.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 130% 150%;
+    }
+
+    .questions_block_location {
+        background-image: url("../public/location_opacy.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 120% 140%;
+    } */
+}

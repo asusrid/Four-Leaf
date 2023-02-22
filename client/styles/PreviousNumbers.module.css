@@ -1,0 +1,25 @@
+.previousNums_accordion {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    width: 70%;
+    --bs-accordion-bg: #f8f9fa;
+    --bs-accordion-btn-bg: #edf2f4;
+    --bs-accordion-active-color: #ffffff;
+    --bs-accordion-active-bg: #6c757d;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.previousNums_intro {
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: x-large;
+    text-align: center;
+}

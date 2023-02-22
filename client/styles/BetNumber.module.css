@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;300;500&display=swap');
+
+.form_bet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 13vh;
+    padding-bottom: 8vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    /* background-color: #2ec4b6; */
+}
+
+.form_bet_label {
+    justify-content: center;
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 6%;
+    margin-bottom: 4%;
+}
+
+.form_bet_price {
+    font-weight: 500;
+    font-size: 4rem;
+    color: #80ED99;
+}
+
+.form_bet_title {
+    justify-content: center;
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: 300;
+    font-size: 3.8rem;
+    text-align: center;
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.form_numbers {
+    font-size: 2rem;
+    text-align: center;
+    height: 130%;
+}
+
+.form_row {
+    margin-bottom: 1rem !important;
+}
+
+.form_style_number {
+    width: 15rem;
+}
+
+.form_remaining_number_label {
+    justify-content: center;
+    text-align: center;
+    color: #011627;
+    width: 100%;
+    font-style: oblique;
+    margin-top: 0.5rem;
+    position: absolute;
+}
+
+.form_error_label {
+    justify-content: center;
+    text-align: center;
+    color: #e71d36;
+    width: 100%;
+    font-style: oblique;
+    margin-top: 0.5rem;
+    position: absolute;
+}
+
+.form_bet_button {
+    margin: 1rem;
+    width: 25%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #011627;
+    --bs-btn-bg: #80ed99;
+    --bs-btn-border-color: #80ed99;
+    --bs-btn-disabled-bg: #59eb7a;
+    --bs-btn-disabled-border-color: #386641;
+    --bs-btn-hover-bg: #386641;
+    --bs-btn-hover-border-color: #386641;
+    --bs-btn-active-bg: #386641;
+    --bs-btn-active-border-color: #386641;
+}
+
+.form_bet_messages {
+    justify-content: center;
+}
+
+.alert {
+    position: fixed;
+    top: 66px;
+    margin-right: 5%;
+    margin-left: 5%;
+    width: auto;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+@media (max-width: 450px) {
+    .form_numbers {
+        width: 100%;
+    }
+
+    .form_row {
+        --bs-gutter-x: 0.5rem;
+    }
+    .form_style_number {
+        width: 0rem;
+    }
+
+    .form_bet_button {
+        width: min-content;
+    }
+}

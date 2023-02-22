@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;500&display=swap');
+
+.reward_title {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 5rem;
+    text-align: center;
+    color: #1E1E1E;
+}
+
+.reward_money {
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: center;
+    color: #1E1E1E;
+    margin-bottom: 0;
+}
+
+.reward_dates {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: center;
+    color: #1E1E1E;
+}
+
+.reward {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    width: 100%;
+    background-image: url("../public/arrow7.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 180vw 165vh;
+}
+
+@media (max-width: 900px) { 
+    .reward {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 95vh;
+        width: 100%;
+        background-image: url("../public/arrow5.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200vw 200vh;
+    }
+ }

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;300;500;600;700&display=swap');
+
+.connect_btn {
+    margin-right: 1rem;
+    /* margin-top: 1rem; */
+    --bs-btn-font-weight: 500;
+    --bs-btn-border-width: 2px;
+    --bs-btn-color: #141619;
+}
+
+.connect_btn_dark {
+    margin-right: 1rem;
+    /* margin-top: 1rem; */
+    --bs-btn-font-weight: 500;
+    --bs-btn-border-width: 2px;
+    --bs-btn-color: white;
+}
+
+.navbar_myaccount {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.center-brand {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+}
+
+.homepage_button {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #80ED99;
+}
+
+.my_account {
+    margin-left: 0.25rem !important;
+    font-weight: 500;
+    font-size: 1rem;
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    color: #80ED99;
+}
+
+.brand_name {
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.no_color {
+    background-color: transparent;
+    
+    .brand_name {
+        font-family: 'M PLUS 2', sans-serif;
+        // font-style: bold;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #141619;
+    }
+    .my_account {
+        margin-left: 0.25rem !important;
+        // font-family: 'M PLUS 2', sans-serif;
+        // font-style: bold;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #40916c;
+    }
+    .homepage_button {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #40916c;
+    }
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    /* display: flex; */
+    align-items: center;
+}
+
+.navbar-brand {
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end);
+    font-size: var(--bs-navbar-brand-font-size);
+    color: var(--bs-navbar-brand-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@media (min-width: 1000px) {
+    .connect_btn {
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar_myaccount {
+        margin-top: 0.6rem;
+    }
+}
