@@ -1,7 +1,11 @@
-import styles from '../../../styles/Reward.module.css'
-import { useEffect, useState } from 'react'
-import { loteryaContract } from "../utils/interact"
-import { LOTERYA_CONTRACT_ADDRESS, ABI } from '../../../constants';
+import { useEffect, useState } from 'react';
+import { loteryaContract } from '../utils/interact';
+import styles from '../../../styles/Reward.module.css';
+
+
+import { utils } from 'ethers';
+
+
 
 export default function BetNumber() {
 
@@ -11,7 +15,6 @@ export default function BetNumber() {
   const getReward = async () => {
     try {
       const rewardUSD = await loteryaContract().methods.getRewardUSD().call() / 1e26;
-      console.log(">>>>>>>> ",await loteryaContract().methods.getRewardUSD().call());
       setReward(rewardUSD.toFixed(2));
     } catch (error) {
       console.log(error);
@@ -37,7 +40,7 @@ export default function BetNumber() {
           console.log(error);
         } else {
           const newLoteryaId = Number(data.returnValues.loteryaId) + 1;
-          const newReward = (data.returnValues.reward / 1e8).toFixed(2);
+          const newReward = (data.returnValues.reward / 1e26).toFixed(2);
           setCurrentLoteryaId(newLoteryaId);
           setReward(newReward);
           console.log("New draw, update ID", newLoteryaId);
@@ -51,31 +54,18 @@ export default function BetNumber() {
   useEffect(() => {
 
     async function setListener() {
-      
       const loterya = await loteryaContract();
-      let options = {
-        filters: {
-          loteryaId: currentLoteryaId
-        },
-        fromBlock: 31236089
-      };
-      // ---------- CHECK THIS EVENT DOESNT TRIGGER MORE THAN ONCE ------------
       loterya.events.NumberPurchased({}, (error, data) => {
         if (error) {
           console.log(error);
         } else {
-          // console.log("🎉 Your number has been purchased successfully!");
-          setReward((data.returnValues.reward / 1e8).toFixed(2));
+          setReward((data.returnValues.reward / 1e26).toFixed(2));
         }
       });
     }
     if (currentLoteryaId != null) {
       setListener();
     }
-
-    // return () => {
-    //   contract.removeAllListeners();
-    // };
   }, [currentLoteryaId])
 
 

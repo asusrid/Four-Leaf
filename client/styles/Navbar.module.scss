@@ -2,7 +2,6 @@
 
 .connect_btn {
     margin-right: 1rem;
-    /* margin-top: 1rem; */
     --bs-btn-font-weight: 500;
     --bs-btn-border-width: 2px;
     --bs-btn-color: #141619;
@@ -10,7 +9,6 @@
 
 .connect_btn_dark {
     margin-right: 1rem;
-    /* margin-top: 1rem; */
     --bs-btn-font-weight: 500;
     --bs-btn-border-width: 2px;
     --bs-btn-color: white;
@@ -38,7 +36,7 @@
 }
 
 .my_account {
-    margin-left: 0.25rem !important;
+    // margin-left: 0.25rem !important;
     font-weight: 500;
     font-size: 1rem;
     padding-bottom: var(--bs-navbar-brand-padding-y);
@@ -46,40 +44,52 @@
 }
 
 .brand_name {
-    font-family: 'M PLUS 2', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: white;
+    font-family: 'M PLUS 2', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    color: white !important;
+}
+
+.alert {
+    position: fixed !important;
+    top: 66px !important;
+    margin-right: 5% !important;
+    margin-left: 5% !important;
+    width: auto !important;
+    left: 15%;
+    right: 15%;
+}
+
+.nav_padding {
+    --bs-gutter-x: 8vw !important;
 }
 
 .no_color {
-    background-color: transparent;
+
+    background-color: white;
     
     .brand_name {
-        font-family: 'M PLUS 2', sans-serif;
-        // font-style: bold;
-        font-weight: 800;
-        font-size: 1.1rem;
-        color: #141619;
+        font-family: 'M PLUS 2', sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 1.1rem !important;
+        color: #141619 !important;
     }
     .my_account {
-        margin-left: 0.25rem !important;
-        // font-family: 'M PLUS 2', sans-serif;
-        // font-style: bold;
-        font-weight: 500;
-        font-size: 1rem;
-        color: #40916c;
+        // margin-left: 0.25rem !important;
+        font-weight: 500 !important;
+        font-size: 1rem !important;
+        color: #40916c !important;
     }
     .homepage_button {
         font-weight: 500;
         font-size: 1rem;
         color: #40916c;
     }
+    
 }
 
 .navbar-expand-lg .navbar-nav {
     flex-direction: row;
-    /* display: flex; */
     align-items: center;
 }
 
@@ -102,5 +112,33 @@
 @media (max-width: 992px) {
     .navbar_myaccount {
         margin-top: 0.6rem;
+    }
+
+    .alert {
+        left: 0%;
+        right: 0%;
+    }
+
+    .connect_btn {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar_myaccount {
+        margin-top: 0.6rem;
+    }
+
+    .alert {
+        left: 0%;
+        right: 0%;
+    }
+
+    .connect_btn {
+        margin-top: 2rem;
+    }
+
+    .connect_btn_dark {
+        margin-top: 1rem;
     }
 }

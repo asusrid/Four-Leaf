@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;300;500&display=swap');
+
+/* 80ED99 */
+.questions {
+    width: 100%;
+    padding-top: 12.5vh;
+    padding-bottom: 8vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    text-align: left;
+}
+
+.questions_step {
+    display: inline;
+    margin-bottom: 2rem;
+}
+
+.question_image_position {
+    display: inline;
+    vertical-align: sub;
+}
+
+.questions_title {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3.2rem;
+    color: #1E1E1E;
+    display: inline;
+}
+
+.questions_text {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #6C757D;
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+    li::marker {
+        color: #80ED99;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    a:hover {
+        color:#80ED99
+    }
+}
+
+.line_break {
+    display: none;
+}
+
+.steps_standout {
+    font-size: 1.5rem;
+}
+
+.underlined {
+    text-decoration: underline;
+    text-decoration-color: #80ED99;
+    color: #6C757D;    
+}
+
+
+
+@media (max-width: 750px) {
+
+    .questions_text {
+        font-family: 'M PLUS 2', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.1rem;
+        color: #6C757D;
+    }
+}
+
+@media (max-width: 400px) {
+    .line_break {
+        display: inherit;
+    }
+}

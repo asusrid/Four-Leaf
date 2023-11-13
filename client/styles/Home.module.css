@@ -14,11 +14,12 @@
 }
 
 .wallet_message {
-  font-family: "Courier New", monospace;
-  font-weight: light;
+  font-family: 'M PLUS 2', sans-serif !important;
+  font-weight: 300 !important;
   font-size: 2rem;
-  margin-top: 40vh;
-  text-align: center;
+  text-align: center !important;
+  margin-top: 25vh;
+  padding: 2rem;
 }
 
 .button {

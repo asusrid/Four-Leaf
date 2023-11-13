@@ -1,14 +1,13 @@
-import { Contract, providers, utils } from 'ethers'
-import { LOTERYA_CONTRACT_ADDRESS, ABI } from '../../../constants'
-import styles from '../../../styles/BetNumber.module.css'
-import { useEffect, useRef, useState } from 'react'
-import Web3Modal from 'web3modal'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import { CONTRACT_ADDRESS, ABI } from '../../../constants';
+import { useEffect, useState } from 'react';
+import { loteryaContract, getProviderOrSigner, getErrorMessage } from "../utils/interact";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
+import styles from '../../../styles/BetNumber.module.css';
 
 
 export default function BetNumber() {
@@ -24,66 +23,9 @@ export default function BetNumber() {
   const [loading, setLoading] = useState(false);
   const [hasBought, setHasBought] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [alert, setAlert] = useState(null);
+  const [message, setMessage] = useState('');
 
-  const web3ModelRef = useRef();
-
-  const getProviderOrSigner = async (needSigner = false) => {
-
-    web3ModelRef.current = new Web3Modal({
-      network: "polygon",
-      providerOptions: {},
-      disableInjectedProvider: false
-    });
-
-    const provider = await web3ModelRef.current.connect();
-    const web3Provider = new providers.Web3Provider(provider);
-
-    // const { chainId } = await web3Provider.getNetwork();
-    // if (chainId != 137) {
-    //   setIsError(true);
-    //   showError("E07")
-    //   throw new Error("Incorrect network");
-    // }
-
-    if (needSigner) {
-      const signer = web3Provider.getSigner();
-      return signer;
-    }
-
-    return web3Provider;
-  }
-
-  const showError = (error) => {
-
-    const errorString = String(error);
-
-    if (errorString.includes("E01")) {
-      var message = <p> You don't have enough funds to buy a number. If you
-        don't know how to get MATICs, <Alert.Link href="#instructions">here we help you.</Alert.Link>" </p>;
-    } else if (errorString.includes("E02")) {
-      var message = <p>This drawing is finished!</p>;
-    } else if (errorString.includes("E03")) {
-      var message = <p>This number is already in exclusivity... Try buying another one!</p>;
-    } else if (errorString.includes("E04")) {
-      var message = <p>This number has been purchased by another user so you cannot ask for exclusivity... maybe choose another one?</p>;
-    } else if (errorString.includes("E05")) {
-      var message = <p>There was an error buying the number.</p>;
-    } else if (errorString.includes("E06")) {
-      var message = <p>There isn't more available numbers like this to buy... Try choosing another one! </p>;
-    } else if (errorString.includes("E07")) {
-      var message = <p>Connect Metamask to Polygon network in order to bet on a number, please. If you
-        don't know how, <Alert.Link href="#instructions">here we help you.</Alert.Link>" </p>;
-    } else if (errorString.includes("user rejected transaction")) {
-      var message = <p>You rejected the transaction on Metamask.</p>;
-    } 
-    // else {
-    //   if (error.data.message.includes("insufficient funds")) {
-    //     var message = <p>Metamask says there is insufficient funds for gas + price + value.</p>;
-    //   }
-    // }
-    setAlert(getAlert(message));
-  }
+  const ethers = require("ethers");
 
   const getAlert = (message) => {
     setTimeout(() => {
@@ -127,19 +69,24 @@ export default function BetNumber() {
 
   const getNumber = async (exclusivity = false) => {
     try {
-
       setLoading(true);
       const signer = await getProviderOrSigner(true);
-      const loterya = new Contract(LOTERYA_CONTRACT_ADDRESS, ABI, signer);
+      const loterya = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
       const betNumber = (number1 + number2 + number3 + number4 + number5 + number6).padStart(6, "0");
 
       if (exclusivity) {
         const price = await loterya.getLatestPrice(true);
-        const res = await loterya.getExclusivity(betNumber, { value: price });
+        const res = await loterya.getExclusivity(betNumber, {
+          value: price,
+          gasLimit: 250000
+        });
         await res.wait();
       } else {
         const price = await loterya.getLatestPrice(false);
-        const res = await loterya.betNumber(betNumber, { value: price });
+        const res = await loterya.betNumber(betNumber, {
+          value: price,
+          gasLimit: 250000
+        });
         await res.wait();
       }
 
@@ -148,7 +95,7 @@ export default function BetNumber() {
 
     } catch (error) {
       setIsError(true);
-      showError(error);
+      setMessage(getErrorMessage(error));
       setLoading(false);
       console.log(error);
     }
@@ -156,15 +103,13 @@ export default function BetNumber() {
 
   const getRemainingNumbers = async () => {
     try {
-      const provider = await getProviderOrSigner();
-      const loterya = new Contract(LOTERYA_CONTRACT_ADDRESS, ABI, provider);
       const betNumber = (number1 + number2 + number3 + number4 + number5 + number6).padStart(6, "0");
-      const purchasedNumbers = await loterya.getRemainingNumbers(betNumber);
+      const purchasedNumbers = await loteryaContract().methods.getRemainingNumbers(betNumber).call();
       const remaining = 10 - purchasedNumbers;
-      setRemainingNumbers(String(remaining));
+      setRemainingNumbers(remaining.toString());
     } catch (error) {
       setIsError(true);
-      showError("There was an error while trying to get the remaining numbers of the selected one. Try again again please!");
+      setMessage("There was an error while trying to get the remaining numbers of the selected one. Try again again please!");
       console.log(error);
     }
   }
@@ -219,7 +164,6 @@ export default function BetNumber() {
         await getRemainingNumbers();
       }
       getNumbers();
-      console.log("Numbers provided");
     }
   }, [numbersProvided])
 
@@ -234,7 +178,6 @@ export default function BetNumber() {
       setRemainingNumbers(null);
     }
   }, [number1, number2, number3, number4, number5, number6])
-
 
   return (
     <Form className={styles.form_bet}>
@@ -299,7 +242,7 @@ export default function BetNumber() {
           }
           {
             isError
-              ? <>{alert}</>
+              ? <>{getAlert(message)}</>
               : <></>
           }
         </Row>

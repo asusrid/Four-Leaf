@@ -1,9 +1,12 @@
 import styles from '../styles/Home.module.css'
 import { useEffect, useState } from 'react'
-import { MyAccount, Navbar, Footer } from '../src/components';
-import { connectWallet } from "../src/components/utils/interact";
+import { PreviousNumbers, Navbar, Footer } from '../src/components';
+import { connectWallet, getProviderOrSigner } from "../src/components/utils/interact";
+import Button from 'react-bootstrap/Button';
+const ethers = require("ethers");
+import { CONTRACT_ADDRESS, ABI } from '../constants';
 
-export default function UserAccount() {
+export default function MyAccount() {
 
   const [walletConnected, setWalletConnected] = useState(false);
   const [message, setMessage] = useState('');
@@ -35,14 +38,23 @@ export default function UserAccount() {
     setupWallet();
   }, [])
 
+  const interleaved = async () => {
+    const signer = await getProviderOrSigner(true);
+    const loterya = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
+    
+    const res5 = await loterya.getBalance();
+    console.log("Last 5 > ", Number(res5));
+  }
+
   return (
     <div className={styles.background_color}>
       <Navbar typeNavbar="personal" />
       <main className={styles.main}>
         {!walletConnected
           ? <p className={styles.wallet_message}>{message}</p>
-          : <MyAccount />
+          : <PreviousNumbers />
         }
+        <Button onClick={interleaved}>checkInterleaved</Button>
       </main>
       <Footer />
     </div>

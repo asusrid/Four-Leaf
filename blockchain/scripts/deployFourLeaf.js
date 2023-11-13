@@ -23,27 +23,38 @@ async function main() {
   const subscriptionId = 638;
   // TEST --------->
   // const subscriptionId = 2893;
-  // upkeep address
-  const oracleAddress = "0x5B97c3A6A1235bbaB47c27A91Ed3c2826CB4826B";
+  // time based upkeep address
+  const timeUpkeepAddress = "0x5B97c3A6A1235bbaB47c27A91Ed3c2826CB4826B";
   // TEST --------->
-  // const oracleAddress = "0x60b9ecad0cF0D65b0B82135393BeafF8bD6C2047";
+  // const timeUpkeepAddress = "0x60b9ecad0cF0D65b0B82135393BeafF8bD6C2047";
+  // custom logic upkeep address
+  const logicUpkeepAddress = "0x02777053d6764996e594c3E88AF1D58D5363a2e6";
+  // TEST --------->
+  // const logicUpkeepAddress = "0xE16Df59B887e3Caa439E0b29B42bA2e7976FD8b2";
   // price feed
   const priceFeed = "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0";
   // TEST --------->
   // const priceFeed = "0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada";
+  // updateInterval
+  const updateInterval = 604800;
+  // TEST --------->
+  // const updateInterval = 190;
+
   const requestConfirmations = 3;
-  const callbackGasLimit = 300000;
+  const callbackGasLimit = 500000;
   const numWords = 6;
 
   const fourleaf = await FourLeaf.deploy(
     consumerAddress, 
     subscriptionId, 
-    oracleAddress,
+    timeUpkeepAddress,
+    logicUpkeepAddress,
     keyHash,
     priceFeed,
     requestConfirmations,
     callbackGasLimit,
-    numWords
+    numWords,
+    updateInterval
   );
 
   await fourleaf.deployed();

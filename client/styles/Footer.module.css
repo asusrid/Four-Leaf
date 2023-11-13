@@ -2,14 +2,14 @@
 
 .footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding-top: 4%;
     padding-bottom: 3%;
     padding-left: 5%;
     padding-right: 5%;
     margin-top: 3rem;
-    background-color: #edf2f4;
-    background-image: url("../public/four-leaf_footer.svg");
+    background-image: url("/four-leaf_footer.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 150vw 150vh;
@@ -18,7 +18,7 @@
 .block {
     display: flex;
     align-items: center;
-    margin-bottom: 0.7rem;
+    padding-right: 2rem;
 }
 
 .block_logo {
@@ -27,9 +27,32 @@
     /* margin-bottom: 0.7rem; */
 }
 
+.social_link {
+    color: none;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.social_media {
+    display: flex;
+}
+
 .icon {
     display: inline;
     vertical-align: sub;
+}
+
+.summary {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: oblique;
+    font-weight: 300;
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+}
+
+.second_row {
+    display: flex;
+    justify-content: space-between;
 }
 
 .name {

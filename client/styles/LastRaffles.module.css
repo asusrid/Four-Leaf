@@ -7,20 +7,16 @@
     align-items: center;
     padding-top: 8vh;
     padding-bottom: 6vh;
-    /* padding-right: 10vw;
-    padding-left: 10vw; */
     width: 100%;
     min-width: 0;
-    /* background-color: #f4f3ee; */
 }
 
 .last_winners_table {
-    font-family: 'M PLUS 2', sans-serif;
-    font-weight: light;
-    font-size: 1rem;
-    table-layout: auto;
-    width: 100%;
-    --bs-table-border-color: rgb(255 255 255 / 0%);
+    font-family: 'M PLUS 2', sans-serif !important;
+    font-size: 1rem !important;
+    table-layout: auto !important;
+    width: 100% !important;
+    --bs-table-border-color: rgb(255 255 255 / 0%) !important;
 }
 
 .table_header {
@@ -29,10 +25,8 @@
 
 .last_winners_table_title {
     font-family: 'M PLUS 2', sans-serif;
-    /* font-weight: bold; */
     font-weight: 300;
     font-size: 3.8rem;
-    /* font-size: 3rem; */
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -51,5 +45,10 @@
         white-space: nowrap;
         padding-right: 1.5rem !important;
         padding-left: 1.5rem !important;
+    }
+    .last_raffles_table_numbers {
+        white-space: nowrap;
+        padding-right: 6vw !important;
+        padding-left: 1rem !important;
     }
  }

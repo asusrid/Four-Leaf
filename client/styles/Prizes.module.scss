@@ -1,0 +1,117 @@
+.prizes {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.title {
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: 300;
+    font-size: 3.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/podium.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 88vw 70vh;
+}
+
+.first {
+    text-align: center;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.other_prizes {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+    justify-content: center;
+}
+
+.first_prize_title {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.4rem;
+    margin-bottom: 0rem;
+    color: #1E1E1E;
+    display: inline;
+    /* text-align: center; */
+}
+
+.prize_title {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.2rem;
+    margin-bottom: 0rem;
+    color: #1E1E1E;
+    display: inline;
+    white-space: nowrap;
+    /* text-align: center; */
+}
+
+.prize_text {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.15rem;
+    color: #6C757D;
+    margin-bottom: 0rem;
+    margin-top: 0.7rem;
+}
+
+.prize_text_info {
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: oblique;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #6C757D;
+    margin-bottom: 0rem;
+    margin-top: 0.7rem;
+    a:hover {
+        color:#80ED99
+    }
+}
+
+.underlined {
+    text-decoration: underline;
+    text-decoration-color: #80ED99;
+    color: #6C757D;    
+}
+
+.another_prize_text {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 33%;
+}
+
+@media (max-width: 500px) {
+    .other_prizes {
+        flex-direction: column;
+    }
+    .another_prize_text {
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 1.5rem;
+        width: auto;
+    }
+    .first {
+        width: auto;
+    }
+    .content {
+        background-image: none;
+    }
+}
